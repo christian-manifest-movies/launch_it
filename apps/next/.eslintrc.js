@@ -1,4 +1,7 @@
 module.exports = {
-  extends: 'next',
+  extends: ['next/core-web-vitals'],
   root: true,
+  rules: {
+    // ... your rules
+  }
 }

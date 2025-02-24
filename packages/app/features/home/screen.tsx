@@ -1,3 +1,5 @@
+'use client'
+
 import {
   View,
   useToastController,
@@ -18,12 +20,13 @@ import { Footer } from 'app/shared'
 import { useSearchParams } from 'solito/navigation'
 import { Link } from 'solito/link'
 import { HOME_LOGO } from 'app/lib/data'
+import { Suspense } from 'react'
 
 type SearchParams = {
   toast?: string;
 }
 
-export function HomeScreen() {
+function SearchParamsComponent() {
   const toast = useToastController()
   const params = useSearchParams<SearchParams>()
 
@@ -115,5 +118,13 @@ export function HomeScreen() {
 
       </YStack>
     </>
+  )
+}
+
+export function HomeScreen() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SearchParamsComponent />
+    </Suspense>
   )
 }
