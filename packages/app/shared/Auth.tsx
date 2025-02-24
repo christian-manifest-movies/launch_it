@@ -65,18 +65,18 @@ export function Auth({ authConfig }: { authConfig: AuthConfig }) {
           <Button onPress={() => handler({ val })}>{buttonText}</Button>
         </XStack>
         <XStack w='100%'>
-          <Text fos='$3' col='$gray9'>
+          <Text fos='$3'>
             {afterText}
           </Text>
         </XStack>
 
         {linkText && href ? (
           <Link href={href} style={{ textDecoration: 'none' }}>
-            <Text col='$gray7'>{linkText}</Text>
+            <Text>{linkText}</Text>
           </Link>
         ) : (
           <View onPress={resend} cursor='pointer'>
-            <Text col='$gray7'>RESEND SECURITY CODE</Text>
+            <Text>RESEND SECURITY CODE</Text>
           </View>
         )}
 
